@@ -23,8 +23,8 @@ export class TryService {
   // put
 
   updateEmployee(id: string, data: any): Observable<any> {
-    const url= `https://localhost:7190/api/SuperAdminController/UpdateEmployees/${id}` ;
-    const url2= `https://localhost:7190/api/AdminController/UpdateEmployeeData/${id}`;
+    const url = `http://aarmoonsystem.runasp.net/api/SuperAdminController/UpdateEmployees/${id}`; ;
+    const url2= `http://aarmoonsystem.runasp.net/api/AdminController/UpdateEmployeeData/${id}`;
 
     const f=this.auth=="Admin"?url2:url
 
@@ -36,8 +36,8 @@ export class TryService {
   // get employee
 
   getAllEmployees(): Observable<any> {
-    const url= 'https://localhost:7190/api/SuperAdminController/GetAllCompanyEmployees';
-    const url2= 'https://localhost:7190/api/AdminController/GetAllEmployeesByBranch';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/GetAllCompanyEmployees';
+    const url2= 'http://aarmoonsystem.runasp.net/api/AdminController/GetAllEmployeesByBranch';
 
     const f=this.auth=="Admin"?url2:url
 
@@ -50,8 +50,8 @@ export class TryService {
 
   addEmployee(data: any): Observable<any> {
 
-    const url= 'https://localhost:7190/api/SuperAdminController/AddEmployee';
-    const url2= 'https://localhost:7190/api/AdminController/AddEmployee';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/AddEmployee';
+    const url2= 'http://aarmoonsystem.runasp.net/api/AdminController/AddEmployee';
 
     const f=this.auth=="Admin"?url2:url
     return this._http.post(f, data,{
@@ -62,8 +62,8 @@ export class TryService {
   // delete
 
   deleteEmployee(id: number): Observable<any> {
-    const url =`https://localhost:7190/api/SuperAdminController/DeleteEmployee/${id}`;
-    const url2 =`https://localhost:7190/api/AdminController/DeleteEmployee/${id}`;
+    const url =`http://aarmoonsystem.runasp.net/api/SuperAdminController/DeleteEmployee/${id}`;
+    const url2 =`http://aarmoonsystem.runasp.net/api/AdminController/DeleteEmployee/${id}`;
     const f=this.auth=="Admin"?url2:url
 
     return this._http.delete(f,{
@@ -79,8 +79,8 @@ export class TryService {
   // get  vehicles
 
   getAllVehicles(): Observable<any> {
-    const url= 'https://localhost:7190/api/SuperAdminController/GetAllVehicles';
-    const url2= 'https://localhost:7190/api/AdminController/GetAllVehiclesByBranch';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/GetAllVehicles';
+    const url2= 'http://aarmoonsystem.runasp.net/api/AdminController/GetAllVehiclesByBranch';
 
     const f=this.auth=="Admin"?url2:url
     return this._http.get(f,{
@@ -93,7 +93,7 @@ export class TryService {
 
   addVehicle(data: any): Observable<any> {
 
-    const url= 'https://localhost:7190/api/SuperAdminController/AddVehicle';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/AddVehicle';
     const url2= '';
 
     const f=this.auth=="Admin"?url2:url
@@ -105,7 +105,7 @@ export class TryService {
   // update vehicle 
 
   updateVehicle(pltNum: string, data: any): Observable<any> {
-    const url= `https://localhost:7190/api/SuperAdminController/UpdateVehicleData/${pltNum}` ;
+    const url= `http://aarmoonsystem.runasp.net/api/SuperAdminController/UpdateVehicleData/${pltNum}` ;
     const url2= ``;
 
     const f=this.auth=="Admin"?url2:url
@@ -120,7 +120,7 @@ export class TryService {
   // delete vehicle
 
   deleteVehicle(pltNum: string): Observable<any> {
-    const url =`https://localhost:7190/api/SuperAdminController/DeleteVehicle/${pltNum}`;
+    const url =`http://aarmoonsystem.runasp.net/api/SuperAdminController/DeleteVehicle/${pltNum}`;
     const url2 =``;
     const f=this.auth=="Admin"?url2:url
 
@@ -138,7 +138,7 @@ export class TryService {
   ///=========================Branches==============================================
 
   getAllBranches(): Observable<any> {
-    const url= 'https://localhost:7190/api/SuperAdminController/GetAllBranches';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/GetAllBranches';
     return this._http.get(url,{
       headers:this.headers
     });
@@ -148,7 +148,7 @@ export class TryService {
   // add branch
 
     addBranch(data: any): Observable<any> {
-    const url= 'https://localhost:7190/api/SuperAdminController/AddBranch';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/AddBranch';
     return this._http.post(url, data,{
       headers:this.headers2
     });
@@ -158,7 +158,7 @@ export class TryService {
   // update branch ///
 
   updateBranch(BranchID:number, data: any): Observable<any> {
-    const url= `https://localhost:7190/api/SuperAdminController/EditBranch/${BranchID}` ;
+    const url= `http://aarmoonsystem.runasp.net/api/SuperAdminController/EditBranch/${BranchID}` ;
     return this._http.put(url, data, {
       headers: this.headers2
     });
@@ -168,7 +168,7 @@ export class TryService {
   /// delete branch ////
  
   deleteBranch(BranchID:number): Observable<any> {
-    const url =`https://localhost:7190/api/SuperAdminController/DeleteBranch/${BranchID}`;
+    const url =`http://aarmoonsystem.runasp.net/api/SuperAdminController/DeleteBranch/${BranchID}`;
     return this._http.delete(url,{
       headers:this.headers
     });
@@ -182,8 +182,8 @@ export class TryService {
  /// get busy vehicle
 
   getAllbusyVehicles(): Observable<any> {
-    const url= 'https://localhost:7190/api/SuperAdminController/GetAllVehiclesInUse';
-    const url2= 'https://localhost:7190/api/AdminController/GetAllVehiclesInUse';
+    const url= 'http://aarmoonsystem.runasp.net/api/SuperAdminController/GetAllVehiclesInUse';
+    const url2= 'http://aarmoonsystem.runasp.net/api/AdminController/GetAllVehiclesInUse';
 
     const f=this.auth=="Admin"?url2:url
     return this._http.get(f,{
@@ -197,7 +197,7 @@ export class TryService {
 
 addBusyVehicle(data: any): Observable<any> {
 
-  const url= 'https://localhost:7190/api/AdminController/AssignEmployeeToVehicle';
+  const url= 'http://aarmoonsystem.runasp.net/api/AdminController/AssignEmployeeToVehicle';
   return this._http.post(url, data,{
     headers:this.headers2
   });
@@ -206,7 +206,7 @@ addBusyVehicle(data: any): Observable<any> {
 ///// delete//////
 
 deleteVehicleInUse(id:string , pltNum:string): Observable<any> {
-  const url =`https://localhost:7190/api/AdminController/FreeTheVehicleFromSingleEmployee/${id}/${pltNum}`;
+  const url =`http://aarmoonsystem.runasp.net/api/AdminController/FreeTheVehicleFromSingleEmployee/${id}/${pltNum}`;
   return this._http.delete(url,{
     headers:this.headers
   });
